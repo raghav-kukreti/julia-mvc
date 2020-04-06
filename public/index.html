@@ -20,7 +20,14 @@
   <div id='map'></div>
 
   <div class="side-bar">
-    <div class="side-bar__accordion"></div>
+    <div class="side-bar__accordion">
+      <div class="accordion--data">
+        <div id="point-1"><input type="text" class="lat"><input type="text" class="long"></div>
+        <div id="point-2"><input type="text" class="lat"><input type="text" class="long"></div>
+        <div id="point-3"><input type="text" class="lat"><input type="text" class="long"></div>
+        <div id="point-4"><input type="text" class="lat"><input type="text" class="long"></div>
+      </div>
+    </div>
     <div class="side-bar__accordion"></div>
     <div class="side-bar__accordion"></div>
 
@@ -39,14 +46,23 @@
       center:[77.6245, 12.9352],
       zoom: 15
     });
-
-    let i = 0;
-    
-    if (i == 3) {
-      console.log("Done placing markers for now");
-    } else {
-        map.on("click", log_marker);
-    }
+    var i = 0;
+    map.on('click', function(event){
+      if (i <= 3) {
+        let long = event['lngLat']['lng'];
+        let lat = event['lngLat']['lat'];
+        console.log(lat, long);
+        let lat_field = document.getElementById("point-" + (i+1)).querySelector(".lat");
+        let long_field = document.getElementById("point-" + (i+1)).querySelector(".long");
+        lat_field.value = lat;
+        long_field.value = long;
+        i++;
+      }
+      else {
+        console.log('Enough clicking!');
+      }
+      
+    });
   </script>
 </body>
 
