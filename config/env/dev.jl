@@ -9,3 +9,4 @@ const config = Settings(
 )
 
 ENV["JULIA_REVISE"] = "auto"
+ENV["MAPBOX"] = "pk.eyJ1IjoicmFnaGF2a3VrcmV0aSIsImEiOiJjazc1cHh1bTEwdGZrM2VxdHIzMDh6aHk0In0.nP1XGxHONmAcMwJinQKlug"

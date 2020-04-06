@@ -1,9 +1,8 @@
 # Sample simulator application in Julia
-## Uses Genie to scaffold a web application. 
 
-Genie is a MVC web framework.
+Uses Genie to scaffold the web application. The scaffold adds a lot of bloat which isn't required for development as most things have to be done manually. The commit `init [remove bloat]` should ideally be used as a boilerplate for new Genie projects.
 
-To run application, install 
+
 
 
 API Doc
