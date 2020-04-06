@@ -1,0 +1,1 @@
+/mnt/c/Users/HAL2000/juspay/julia-1.4.0/bin/julia --color=yes --depwarn=no -q -i -- ../bootstrap.jl %*
