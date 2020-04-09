@@ -21,18 +21,19 @@
 
   <div class="side-bar">
     <div class="side-bar__accordion">
+      <h2>Area boundary</h1>
       <div class="accordion--data">
-        <div id="point-1"><input type="text" class="lat"><input type="text" class="long"></div>
-        <div id="point-2"><input type="text" class="lat"><input type="text" class="long"></div>
-        <div id="point-3"><input type="text" class="lat"><input type="text" class="long"></div>
-        <div id="point-4"><input type="text" class="lat"><input type="text" class="long"></div>
+        <div id="point-1"><label>Point 1: </label><input type="text" disabled class="lat"><input type="text" disabled class="long"></div>
+        <div id="point-2"><label>Point 2: </label><input type="text" disabled class="lat"><input type="text" disabled class="long"></div>
+        <div id="point-3"><label>Point 3: </label><input type="text" disabled class="lat"><input type="text" disabled class="long"></div>
+        <div id="point-4"><label>Point 4: </label><input type="text" disabled class="lat"><input type="text" disabled class="long"></div>
       </div>
     </div>
     <div class="side-bar__accordion"></div>
     <div class="side-bar__accordion"></div>
 
     <div class="side-bar__button">
-      <a href="" class="button button--green">
+      <a href="#0" class="button button--blue" id="button__render">
         re-render map
       </a>
     </div>
@@ -51,18 +52,50 @@
       if (i <= 3) {
         let long = event['lngLat']['lng'];
         let lat = event['lngLat']['lat'];
+
         console.log(lat, long);
+        
         let lat_field = document.getElementById("point-" + (i+1)).querySelector(".lat");
         let long_field = document.getElementById("point-" + (i+1)).querySelector(".long");
         lat_field.value = lat;
         long_field.value = long;
+        // Send collection of LatLongs to API which returns GeoJSON
+        // and renders a couple of points
         i++;
       }
       else {
         console.log('Enough clicking!');
-      }
-      
+      }    
     });
+
+    let render_button = document.getElementById('button__render');
+    
+    render_button.addEventListener('click', event => {
+      var coordinates = {
+        "point-1": {},
+        "point-2": {},
+        "point-3": {},
+        "point-4": {}
+      };
+      for (let i = 0; i < 4; i++) {
+        let idx = 'point-' + i; 
+        coordinates[idx] = {
+          "lat": document.getElementById("point-" + (i+1)).querySelector(".lat").value,
+          "long": document.getElementById("point-" + (i+1)).querySelector(".long").value
+        };
+      }
+
+      console.log(coordinates);
+      
+      fetch('/render', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(coordinates),
+      });
+    });
+    
   </script>
 </body>
 

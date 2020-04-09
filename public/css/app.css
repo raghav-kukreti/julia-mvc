@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;600&display=swap");
 *,
 *::after,
 *::before {
@@ -8,11 +8,12 @@
   padding: 0; }
 
 body, html {
-  font-size: 100%; }
+  font-size: 100%;
+  font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif; }
 
 .side-bar {
   width: 367px;
-  height: 772px;
+  padding: 1rem 0;
   border-radius: 4px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -26,3 +27,84 @@ body, html {
   -ms-transform: translate(5%, -50%);
   transform: translate(5%, -50%);
   z-index: 1000; }
+
+.side-bar__accordion {
+  padding: 10px 20px;
+  color: #f6f8f9; }
+  .side-bar__accordion h2 {
+    font-size: 1.2rem;
+    margin-bottom: 30px; }
+
+.accordion--data div {
+  margin-bottom: 10px; }
+  .accordion--data div label {
+    opacity: .5; }
+  .accordion--data div input {
+    border: solid 1px #474c5b;
+    padding: 10px 5px;
+    margin: 0 5px;
+    outline: none;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: IBM Plex Sans;
+    width: 100px;
+    background: rgba(48, 52, 67, 0.4); }
+
+.map--marker {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #2ecc71;
+  z-index: 10000; }
+
+h1 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: -.2px; }
+
+h2 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: -.2px; }
+
+h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: -.2px; }
+
+h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: -.2px; }
+
+h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: -.2px; }
+
+.side-bar__button {
+  text-align: center;
+  margin-bottom: 10px;
+  width: 100%; }
+
+.button {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  font-size: .8rem;
+  padding: 10px 30px;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  -webkit-transition: all .35s ease-in-out;
+  -o-transition: all .35s ease-in-out;
+  transition: all .35s ease-in-out; }
+
+.button--blue {
+  background: #009aff;
+  -webkit-box-shadow: 0px 0px 0px rgba(0, 154, 255, 0.6);
+  box-shadow: 0px 0px 0px rgba(0, 154, 255, 0.6); }
+  .button--blue:hover {
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 154, 255, 0.6);
+    box-shadow: 0px 0px 5px rgba(0, 154, 255, 0.6); }

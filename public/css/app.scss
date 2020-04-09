@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;600&display=swap');
 
 *,
 *::after,
@@ -10,11 +10,13 @@
 
 body, html {
     font-size: 100%;
+    font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;
 }
 
 .side-bar {
     width: 367px;
-    height: 772px;
+    padding: 1rem 0;
+    // height: 30vh;
     border-radius: 4px;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
@@ -25,4 +27,75 @@ body, html {
     right: 5%;
     transform: translate(5%, -50%);
     z-index: 1000;
+}
+
+.side-bar__accordion {
+    padding: 10px 20px;
+    color: #f6f8f9;
+    h2 {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+}
+.accordion--data {
+    div {
+        margin-bottom: 10px;
+        label {
+            opacity: .5;
+        }
+        input {
+            border: solid 1px #474c5b;
+            padding: 10px 5px;
+            margin: 0 5px;
+            outline: none; 
+            border-radius: 5px;
+            color: rgba(#fff, 0.8);
+            font-family: IBM Plex Sans;
+            width: 100px;
+            background: darken(rgba(70, 75, 96, 0.4), 10%);
+        }
+    }
+}
+
+.map--marker {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #2ecc71;
+    z-index: 10000;
+}
+
+@for $var from 1 to 6 {
+    h#{$var} {
+        font-weight: 600;
+        margin-bottom: 10px;
+        letter-spacing: -.2px;
+    }
+}
+.side-bar__button {
+    text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.button {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    outline: none;  
+    font-size: .8rem;  
+    padding: 10px 30px;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    transition: all .35s ease-in-out;
+}
+
+.button--blue {
+    background: #009aff;
+    box-shadow: 0px 0px 0px rgba(#009aff, .6);
+    &:hover {
+        box-shadow: 0px 0px 5px rgba(#009aff, .6);
+
+    }
 }
