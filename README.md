@@ -10,10 +10,11 @@ In the project root,
 will spin up a dev server. It doesn't automatically re-compile routes and controllers, so after every change the server needs to be restarted.
 
 ## Adding new packages
-In the project root, type in `julia` followed by `]`. This will spin up `Pkg`, the in-built package manager. Now you need to activate the environment so that new packages are installed locally.
+In the project root, enter the Julia REPL by typing `julia`. Follow that by a `]` in the REPL. This will spin up `Pkg`, the in-built package manager. Now you need to activate the environment so that new packages are installed locally.
 
-That can be done with `activate .`.
+That can be done with `activate .`
 
+Now add any package by typing in `add <PackageName>`
 
 API Doc [In progress]
 ```
