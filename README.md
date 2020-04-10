@@ -17,38 +17,3 @@ That can be done with `activate .`
 Now add any package by typing in `add <PackageName>`
 
 API Doc [In progress]
-```
-Route
-    Create
-    Get
-    List (filter: carrier)
-    Update
-    Delete
-Area
-    Create
-    Get
-    List (filter: city, country)
-    Update
-    Delete
-Carrier
-    Create individual
-    Bulk create
-    Get
-    List (filter: status)
-    Update
-    Delete
-Provider
-    Create
-    Get
-    List
-    Update
-    Delete
-Policy
-    Create
-    Get
-    List
-    Update
-    Delete
-Search Counts (Demand)
-    List
-```
